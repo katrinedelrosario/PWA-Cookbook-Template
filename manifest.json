@@ -1,10 +1,17 @@
 {
-	"name": "PWA CookBook",
+	"name": "pwa cookbook",
 	"short_name": "PWACookBook",
 	"start_url": "./index.html",
 	"id": "./index.html",
 	"display": "standalone",
 	"background_color": "#ffffff",
-	"theme_color": "#ffffff",
-	"orientation": "portrait-primary"
+	"theme_color": "#5d0fc4",
+	"orientation": "portrait-primary",
+	"icons": [
+		{
+			"src": "./assets/AppImages/android/android-launchericon-48-48.png",
+			"sizes": "48x48",
+			"type": "image/png"
+		}
+	]
   }
