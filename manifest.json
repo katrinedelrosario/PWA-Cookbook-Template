@@ -2,7 +2,7 @@
 	"name": "pwa cookbook",
 	"short_name": "PWACookBook",
 	"start_url": "./index.html",
-	"description": "your own virtuel cookbook to store recipies!",
+	"description": "your own virtual cookbook to store recipies!",
 	"id": "./index.html",
 	"display": "standalone",
 	"background_color": "#ffffff",
