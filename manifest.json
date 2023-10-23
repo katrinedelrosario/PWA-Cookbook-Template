@@ -2,7 +2,7 @@
 	"name": "pwa cookbook",
 	"short_name": "PWACookBook",
 	"start_url": "./index.html",
-	"description": "your own virtuel cookbook!",
+	"description": "your own virtuel cookbook to store recipies!",
 	"id": "./index.html",
 	"display": "standalone",
 	"background_color": "#ffffff",
@@ -27,7 +27,7 @@
 		{
 			"src": "./assets/logo/android/android-launchericon-144-144.png",
 			"sizes": "144x144",
-			"type": "image/png"
+			"type": "any"
 		},
 		{
 			"src": "./assets/logo/android/android-launchericon-192-192.png",
