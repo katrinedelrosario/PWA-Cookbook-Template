@@ -34,7 +34,7 @@ self.addEventListener('install', (event) => {
 //activate sw
 self.addEventListener('activate', (event) => {
     console.log('activated sw', event)
-    //filters and deletes caches that doesnt match new version
+    //filters and deletes caches that doesnt match updated new version
        event.waitUntil(
            caches.keys().then(keys => {
                const filteredkeys = keys.filter(key => key !== staticCacheName)
