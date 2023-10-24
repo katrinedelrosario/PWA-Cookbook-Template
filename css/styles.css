@@ -1,7 +1,7 @@
 /* colours */
 :root{
-  --primary: #000;
-  --secondary: #666;
+  --primary: #f6f1f7;
+  --secondary: #e0d3e3;
   --title: #5d0fc4;
   --light: #fff;
 }
@@ -23,6 +23,7 @@ nav a span{
 nav .sidenav-trigger{
   margin: 0;
   cursor: pointer;
+  color: var(--title);
 }
 
 /* recipe styles */

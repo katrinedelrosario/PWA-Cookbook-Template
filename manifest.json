@@ -1,6 +1,6 @@
 {
-	"name": "pwa cookbook",
-	"short_name": "PWACookBook",
+	"name": "my cookbook",
+	"short_name": "mycookbook",
 	"start_url": "./index.html",
 	"description": "your own virtual cookbook to store recipies!",
 	"id": "./index.html",

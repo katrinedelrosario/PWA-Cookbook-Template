@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#000">
-  <title>pwa cookbook</title>
+  <title>cookbook</title>
   <!-- materialize icons, css & js -->
   <link type="text/css" href="./css/materialize.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -13,13 +13,15 @@
   <link rel="manifest" href="./manifest.json">
   <script type="text/javascript" src="./js/materialize.min.js"></script>
   <script src="./js/ui.js" defer></script>
+  <script src="./sw.js" defer></script>
+
 </head>
 <body class="grey lighten-4">
 
   <!-- top nav -->
   <nav class="z-depth-0">
     <div class="nav-wrapper container">
-      <a href="/"><span>PWA</span>CookBook</a>
+      <a href="/"><span>my</span>cookbook</a>
       <span class="right white-text text-darken-1">
         <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
       </span>
@@ -28,7 +30,7 @@
 
   <!-- side nav -->
   <ul id="side-menu" class="sidenav side-menu">
-    <li><a class="subheader">PWA CooKBooK</a></li>
+    <li><a class="subheader">my cookbook</a></li>
     <li><a href="/" class="waves-effect">Home</a></li>
     <li><a href="./pages/about.html" class="waves-effect">About</a></li>
     <li><div class="divider"></div></li>
@@ -37,10 +39,10 @@
   <!-- recipes -->
   <div class="recipes container grey-text text-darken-1">
     <div class="card-panel recipe white row">
-      <img src="./img/dish.png" alt="recipe thumb">
+      <img src="./assets/imgs/pizza.png" alt="recipe thumb">
       <div class="recipe-details">
-        <div class="recipe-title">Edame Noodles</div>
-        <div class="recipe-ingredients">Edame Beans, Noodels, Garlic oil</div>
+        <div class="recipe-title">Potato pizza</div>
+        <div class="recipe-ingredients">pizzadough, mascarpone, potato, serrano</div>
       </div>
       <div class="recipe-delete">
         <i class="material-icons">delete_outline</i>
