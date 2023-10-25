@@ -42,6 +42,7 @@ nav .sidenav-trigger{
 .recipe img{
   grid-area: image;
   max-width: 60px;
+  border-radius: 8px;
 }
 .recipe-details{
   grid-area: details;

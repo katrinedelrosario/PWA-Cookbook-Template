@@ -8,8 +8,6 @@ const assets = [
     "css/styles.css"
 ]
 
-
-
 //register sw
 if('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js')
@@ -45,17 +43,37 @@ self.addEventListener('activate', (event) => {
       )    
 })
 
-//fetch event
-self.addEventListener('fetch', event => {
-    event.respondWith(
-        caches.match(event.request).then(cacheRes => {
-            return cacheRes || fetch(event.request).then(async fetchRes => {
-                const cache = await caches.open(dynamicCacheName)
-                cache.put(event.request.url, fetchRes.clone())
-                return fetchRes
-                console.log('fetched res')
-            })
-        })
-    )
-})
+//limit
+const limitCacheSize = (cacheName, numberOfAllowedFiles) => {
+	caches.open(cacheName).then(cache => {
+		cache.keys().then(keys => {
+			if(keys.length > numberOfAllowedFiles) {
+				cache.delete(keys[0]).then(limitCacheSize(cacheName, numberOfAllowedFiles))
+			}
+		})
+	})
+}
+
+//fetch
+self.addEventListener("fetch", (event) => {
+	limitCacheSize(dynamicCacheName, 2);
+  
+	if (!(event.request.url.indexOf("http") === 0)) return;
+	event.respondWith(
+	  caches
+		.match(event.request)
+		.then((cacheRes) => {
+		  return (
+			cacheRes ||
+			fetch(event.request).then(async fetchRes => {
+			  return caches.open(dynamicCacheName).then((cache) => {
+				cache.put(event.request.url, fetchRes.clone())
+				return fetchRes
+			  });
+			})
+		  );
+		})
+	
+)})
+
 
