@@ -68,10 +68,21 @@
 			"src": "./assets/logo/ios/192.png",
 			"sizes": "192x192",
 			"type": "image/png"
-		},{
+		},
+		{
 			"src": "./assets/logo/ios/512.png",
 			"sizes": "512x512",
 			"type": "image/png"
+		},
+		{
+			"src": "./assets/icons/chef-book-sad.png",
+			"sizes": "356x583",
+			"type": "image/png"
+		},
+		{
+			"src": "./assets/icons/favicon.ico",
+			"sizes": "16x16",
+			"type": "any"
 		}
 	]
   }

@@ -1,11 +1,13 @@
-const staticCacheName = 'site-static-v1.4'
-const dynamicCacheName = 'site-dynamic-v1.2'
+const staticCacheName = 'site-static-v1.5'
+const dynamicCacheName = 'site-dynamic-v1.4'
 
 
 const assets = [
-    "/",
-    "/index.html",
-    "css/styles.css"
+    '/index.html',
+    '/css/styles.css',
+    './pages/fallback.html',
+    './assets/icons/chef-book-sad.png',
+    '/css/materialize.min.css'
 ]
 
 //register sw
@@ -17,6 +19,7 @@ if('serviceWorker' in navigator) {
 
 //install sw & creates cache
 self.addEventListener('install', (event) => {
+    
     event.waitUntil(
         //creates cache & adds
         caches.open(staticCacheName)
@@ -43,22 +46,13 @@ self.addEventListener('activate', (event) => {
       )    
 })
 
-//limit
-const limitCacheSize = (cacheName, numberOfAllowedFiles) => {
-	caches.open(cacheName).then(cache => {
-		cache.keys().then(keys => {
-			if(keys.length > numberOfAllowedFiles) {
-				cache.delete(keys[0]).then(limitCacheSize(cacheName, numberOfAllowedFiles))
-			}
-		})
-	})
-}
+
 
 //fetch
 self.addEventListener("fetch", (event) => {
 	limitCacheSize(dynamicCacheName, 2);
   
-	if (!(event.request.url.indexOf("http") === 0)) return;
+	if (!(event.request.url.indexOf('http') === 0)) return
 	event.respondWith(
 	  caches
 		.match(event.request)
@@ -69,11 +63,28 @@ self.addEventListener("fetch", (event) => {
 			  return caches.open(dynamicCacheName).then((cache) => {
 				cache.put(event.request.url, fetchRes.clone())
 				return fetchRes
-			  });
+			  })
 			})
-		  );
+		  )
 		})
+
+    //catches error and returns fallback page
+    .catch(() => {
+			if(event.request.url.indexOf('.html') > -1) {
+				return caches.match('./pages/fallback.html')
+			}
+		}
+	)
 	
 )})
 
-
+//limit
+const limitCacheSize = (cacheName, numberOfAllowedFiles) => {
+	caches.open(cacheName).then(cache => {
+		cache.keys().then(keys => {
+			if(keys.length > numberOfAllowedFiles) {
+				cache.delete(keys[0]).then(limitCacheSize(cacheName, numberOfAllowedFiles))
+			}
+		})
+	})
+}

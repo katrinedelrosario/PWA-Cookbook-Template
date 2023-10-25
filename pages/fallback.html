@@ -7,13 +7,13 @@
   <meta name="theme-color" content="#000">
   <title>cookbook</title>
   <!-- materialize icons, css & js -->
-  <link type="text/css" href="./css/materialize.min.css" rel="stylesheet">
+  <link type="text/css" href="../css/materialize.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" href="./css/styles.css" rel="stylesheet">
-  <link rel="manifest" href="./manifest.json">
-  <script type="text/javascript" src="./js/materialize.min.js"></script>
-  <script src="./js/ui.js" defer></script>
-  <script src="./sw.js" defer></script>
+  <link type="text/css" href="../css/styles.css" rel="stylesheet">
+  <link rel="manifest" href="../manifest.json">
+  <script type="text/javascript" src="../js/materialize.min.js"></script>
+  <script src="../js/ui.js" defer></script>
+  <script src="../sw.js" defer></script>
 
 </head>
 <body class="grey lighten-4">
@@ -38,6 +38,12 @@
 
 
   <!-- fallback -->
-  <div>
-    <h1>theres has been a problem </h1>
-  </div>
+  <!-- <div>
+    <h2Our cookbook needs a Wi-Fi boost to whip up some recipes. Don't worry, your culinary adventure will resume as soon as you're back online. In the meantime, savor the anticipation!</h2>
+  </div> -->
+  <div class="offline-container">
+    <img src="../assets/icons/chef-book-sad.png" alt="Sad Book with Chef's Hat">
+    <h1>Looks like you're offline</h1>
+    <p>Oops! It seems like we've lost this recipe in the online-sauce. Our chefs are on it, and we'll have it sizzling back on the menu soon.</p>
+    <button class="refresh-button">Refresh</button>
+</div>
