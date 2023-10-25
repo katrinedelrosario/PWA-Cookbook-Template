@@ -81,7 +81,7 @@
 		},
 		{
 			"src": "./assets/icons/favicon.ico",
-			"sizes": "16x16",
+			"sizes": "48x48",
 			"type": "any"
 		}
 	]
