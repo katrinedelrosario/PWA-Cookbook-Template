@@ -50,7 +50,7 @@ self.addEventListener('activate', (event) => {
 
 //fetch
 self.addEventListener("fetch", (event) => {
-	limitCacheSize(dynamicCacheName, 2);
+	limitCacheSize(dynamicCacheName, 2)
   
 	if (!(event.request.url.indexOf('http') === 0)) return
 	event.respondWith(
